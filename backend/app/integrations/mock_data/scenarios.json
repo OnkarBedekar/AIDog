@@ -1,0 +1,66 @@
+{
+  "incident_scenarios": [
+    {
+      "id": "scenario_001",
+      "name": "Database Latency Spike",
+      "type": "db_latency_spike",
+      "description": "High p95 latency detected in database queries, affecting user-service and payment-service",
+      "services": ["user-service", "payment-service", "database"],
+      "symptom_type": "latency",
+      "primary_error_code": "TIMEOUT",
+      "deploy_present": true,
+      "started_at": "2024-01-15T10:30:00Z",
+      "severity": "critical",
+      "monitor_id": "mon_003",
+      "telemetry": {
+        "metrics": {
+          "query": "p95:db.query.duration{service:database}",
+          "spike_value": 2.5,
+          "normal_value": 0.2
+        },
+        "logs": [
+          {
+            "message": "ERROR: Database connection timeout after 5s",
+            "level": "error",
+            "count": 45
+          }
+        ],
+        "traces": {
+          "slow_operations": ["db.query.users", "db.query.payments"],
+          "p95_duration": 2500
+        }
+      }
+    },
+    {
+      "id": "scenario_002",
+      "name": "AI Quality Drift",
+      "type": "ai_quality_drift",
+      "description": "Retrieval mismatch detected in LLM service, quality score dropped significantly",
+      "services": ["llm-service", "retrieval-service", "embedding-service"],
+      "symptom_type": "quality",
+      "primary_error_code": "RETRIEVAL_MISMATCH",
+      "deploy_present": false,
+      "started_at": "2024-01-15T14:15:00Z",
+      "severity": "warning",
+      "monitor_id": "mon_004",
+      "telemetry": {
+        "metrics": {
+          "query": "avg:llm.quality_score{service:llm-service}",
+          "current_value": 0.65,
+          "baseline_value": 0.85
+        },
+        "logs": [
+          {
+            "message": "WARN: Retrieval mismatch detected in query results",
+            "level": "warning",
+            "count": 23
+          }
+        ],
+        "traces": {
+          "affected_operations": ["llm.generate", "retrieval.search"],
+          "quality_drop": 0.20
+        }
+      }
+    }
+  ]
+}

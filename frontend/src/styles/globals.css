@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Patrick+Hand&display=swap');
+
+@layer base {
+  :root {
+    --background: 40 50% 98%;
+    --foreground: 0 0% 17%;
+    --card: 40 50% 100%;
+    --card-foreground: 0 0% 17%;
+    --popover: 40 50% 100%;
+    --popover-foreground: 0 0% 17%;
+    --primary: 0 100% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 36 25% 89%;
+    --secondary-foreground: 0 0% 17%;
+    --muted: 36 25% 89%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 216 56% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 36 20% 82%;
+    --input: 36 20% 82%;
+    --ring: 0 100% 65%;
+    --radius: 0.5rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-paper text-pencil font-patrick;
+    background-image: radial-gradient(#e5e0d8 1px, transparent 1px);
+    background-size: 24px 24px;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .border-wobbly {
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  }
+  .border-wobbly-alt {
+    border-radius: 15px 225px 15px 255px / 225px 15px 255px 15px;
+  }
+  .shadow-hard {
+    box-shadow: 4px 4px 0px 0px #2d2d2d;
+  }
+  .shadow-hard-lg {
+    box-shadow: 8px 8px 0px 0px #2d2d2d;
+  }
+  .shadow-hard-red {
+    box-shadow: 4px 4px 0px 0px #ff4d4d;
+  }
+  .shadow-hard-blue {
+    box-shadow: 4px 4px 0px 0px #2d5da1;
+  }
+  .font-kalam {
+    font-family: 'Kalam', cursive;
+  }
+  .font-patrick {
+    font-family: 'Patrick Hand', cursive;
+  }
+  .tape {
+    position: relative;
+  }
+  .tape::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 60px;
+    height: 20px;
+    background: rgba(255, 249, 196, 0.8);
+    border: 1px solid #e5e0d8;
+    z-index: 10;
+  }
+}

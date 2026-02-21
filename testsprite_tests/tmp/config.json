@@ -1,0 +1,17 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:3000/incidents",
+  "executionArgs": {
+    "projectName": "AIDog",
+    "projectPath": "/Users/sakshamyadav/Development/test/AIDog",
+    "testIds": [],
+    "additionalInstruction": "Focus on the incident investigation flow: login, view incidents list, click into an incident, and navigate through the tabs (Overview, Evidence, Forecast, Guided Steps, Recommendations, Tests). These are the core user journeys for AIDog.",
+    "envs": {
+      "API_KEY": "sk-user-UeADY1Wnu9jdTodgvb_cmNZpxHuzEbmkdCOa3VxMT9Ikpws8oPVjB3Hs_RjglBbjAOjdq5_hQRjHVLM55NXKXdbbqyDU_a16caTeWwBi6S_faCVxdgn_ql2cgdTgNWdJDZw"
+    }
+  },
+  "serverPort": 59152,
+  "proxy": "http://d8566e69-ffa8-4272-8d9e-c4ca91af45d8:Im2ZSLquJvNYl6KUUzANKLAqj47qmgZI@tun.testsprite.com:8080"
+}

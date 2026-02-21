@@ -1,0 +1,138 @@
+version: "2"
+type: frontend
+tech_stack:
+  - language: TypeScript
+  - framework: Next.js 14
+  - ui_library: Radix UI, Tailwind CSS, Recharts, Framer Motion
+  - other: TanStack React Query, dnd-kit, Monaco Editor
+
+routes:
+  - path: /
+    file: src/app/page.tsx
+    auth_required: false
+    description: Landing page with hero, how-it-works section, and CTA
+  - path: /login
+    file: src/app/login/page.tsx
+    auth_required: false
+    description: User login with email and password
+  - path: /signup
+    file: src/app/signup/page.tsx
+    auth_required: false
+    description: User signup with email, password, confirm password, and role selection
+  - path: /home
+    file: src/app/home/page.tsx
+    auth_required: true
+    description: Dashboard home overview showing service health and active incidents
+  - path: /incidents
+    file: src/app/incidents/page.tsx
+    auth_required: true
+    description: List of all incidents with severity badges and timestamps
+  - path: /incidents/[id]
+    file: src/app/incidents/[id]/page.tsx
+    auth_required: true
+    description: Incident detail room with tabs for Overview, Evidence, Forecast, Guided Steps, Recommendations, Tests, Memory
+
+features:
+  - name: User Login
+    description: Sign in with email and password, redirects to /home on success
+    files:
+      - src/app/login/page.tsx
+      - src/lib/auth.ts
+    entry_route: /login
+    user_interactions:
+      - Fill email input field
+      - Fill password input field
+      - Click Sign In button
+      - See error message on invalid credentials
+      - Get redirected to /home on success
+    api_calls:
+      - method: POST
+        endpoint: /api/auth/login
+    auth_required: false
+
+  - name: User Signup
+    description: Create account with email, password, confirm password, and role (SRE, Backend, ML, Product)
+    files:
+      - src/app/signup/page.tsx
+      - src/lib/auth.ts
+    entry_route: /signup
+    user_interactions:
+      - Fill email input
+      - Fill password input (min 6 chars)
+      - Fill confirm password input
+      - Select role from SRE, Backend, ML, Product buttons
+      - Click Create Account button
+      - See error if passwords do not match or are too short
+      - Get redirected to /home on success
+    api_calls:
+      - method: POST
+        endpoint: /api/auth/signup
+    auth_required: false
+
+  - name: Incidents List
+    description: View all incidents sorted by recency with severity and state labels
+    files:
+      - src/app/incidents/page.tsx
+      - src/lib/api.ts
+    entry_route: /incidents
+    user_interactions:
+      - View list of incident cards with title, services, timestamp, and severity badge
+      - Click on an incident card to navigate to the incident detail page
+      - See empty state message when no incidents exist
+    api_calls:
+      - method: GET
+        endpoint: /api/incidents
+    auth_required: true
+
+  - name: Incident Investigation Room
+    description: Full incident investigation workspace with 7 tabs
+    files:
+      - src/app/incidents/[id]/page.tsx
+      - src/components/IncidentRoom.tsx
+      - src/components/EvidenceView.tsx
+      - src/components/ForecastPanel.tsx
+      - src/components/interactive/GuidedSteps.tsx
+      - src/components/cards/RecommendationCard.tsx
+      - src/components/AgentTracePanel.tsx
+    entry_route: /incidents/[id]
+    user_interactions:
+      - View incident header with title and severity badge
+      - Switch between tabs: Overview, Evidence, Forecast, Guided Steps, Recommendations, Tests, Memory
+      - View telemetry evidence (metrics, logs, traces) in Evidence tab
+      - View Toto time-series forecast in Forecast tab
+      - Follow AI-generated guided investigation steps in Guided Steps tab
+      - View remediation recommendations in Recommendations tab
+      - View test results in Tests tab
+      - View agent trace / memory in Memory tab
+    api_calls:
+      - method: GET
+        endpoint: /api/incidents/{id}
+      - method: GET
+        endpoint: /api/incidents/{id}/forecast
+      - method: GET
+        endpoint: /api/incidents/{id}/agent-trace
+    auth_required: true
+
+  - name: Home Dashboard
+    description: Overview of system health, active monitors, and recent incidents
+    files:
+      - src/app/home/page.tsx
+      - src/components/HomeOverview.tsx
+    entry_route: /home
+    user_interactions:
+      - View service health overview
+      - View active monitor alerts
+      - View recent incidents
+      - Auto-refresh every 30 seconds
+    api_calls:
+      - method: GET
+        endpoint: /api/home/overview
+    auth_required: true
+
+known_limitations:
+  - issue: TestSprite integration in the Tests tab uses mock mode by default when no API key is set
+    location: src/app/integrations/testsprite.py
+    impact: Test results shown are deterministic mocks, not real test execution
+  - issue: Incident investigation pipeline (6 LLM agents) can take 15-30s to complete
+    location: src/app/agentcore/runner.py
+    impact: Users may see loading states for extended periods on first visit

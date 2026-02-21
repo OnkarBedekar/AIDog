@@ -1,0 +1,1221 @@
+[
+  {
+    "id": "TC001",
+    "title": "Install & Setup happy path: uv sync and Playwright Chromium install succeed",
+    "description": "Verifies the user can follow the install steps and see a visible success/ready indication at the end.",
+    "category": "Install & Setup",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify page title contains \"UI Dataset Builder\""
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"How it works\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Run uv sync\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"playwright install chromium\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Chromium\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"environment ready\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Install & Setup documentation is discoverable from the Landing page CTA",
+    "description": "Verifies the landing page provides a clear call-to-action that leads the user toward install/setup guidance.",
+    "category": "Install & Setup",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Get Started\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Get Started\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"setup\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Install\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"uv sync\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "Install & Setup: error path messaging for uv sync dependency resolution failure is visible",
+    "description": "Verifies the UI includes visible guidance for when uv sync fails, including missing system packages and suggested fixes.",
+    "category": "Install & Setup",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the install/setup instructions section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Dependency resolution fails\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"missing system packages\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"suggested fixes\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"uv sync\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Install & Setup: Playwright Chromium install step is explicitly called out",
+    "description": "Verifies the setup guidance clearly specifies installing Chromium via Playwright as a required step.",
+    "category": "Install & Setup",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the install/setup instructions section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"playwright install chromium\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Chromium binary\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"installed\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Install & Setup: prerequisites mention for system packages is present",
+    "description": "Verifies the setup guidance contains a visible prerequisites/system dependencies section to prevent install failures.",
+    "category": "Install & Setup",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the install/setup instructions section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Prerequisites\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"system packages\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Linux\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"macOS\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Install & Setup: instructions include a clear sequence from clone to ready state",
+    "description": "Verifies the install steps appear in a clear, ordered sequence matching the intended workflow.",
+    "category": "Install & Setup",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the install/setup instructions section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Clone\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"uv sync\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"playwright install chromium\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"ready\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Build workflow guidance is discoverable from the Landing page",
+    "description": "Verifies a user can find guidance/CTA from the landing page relevant to running the Build (crawl + annotate) workflow.",
+    "category": "Run Build (Crawl + Annotate)",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to \"/\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify page title contains \"UI Dataset\""
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the \"How it works\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"How it works\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"build\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"dataset\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Build run prerequisites are understandable from UI copy (no CLI execution)",
+    "description": "Verifies the UI provides visible textual guidance that implies required inputs/outputs for the Build (URLs list, output folder, images/annotations).",
+    "category": "Run Build (Crawl + Annotate)",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to \"/\""
+      },
+      {
+        "type": "action",
+        "description": "Scroll to the main content section describing the tool workflow"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"URLs\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"screenshots\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"annotations\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"COCO\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Configure crawl options with valid flags and verify run summary reflects settings",
+    "description": "Verifies a user can set viewport, concurrency, scroll steps, and wait strategy and see those settings reflected in the build run output/summary.",
+    "category": "Configure Crawl Options",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to \"/\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"UI Dataset Builder\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Login\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/login\""
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Sign in\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/home\""
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Invalid viewport flag shows validation error and prevents run",
+    "description": "Verifies the CLI rejects an invalid viewport value and shows a clear validation error without proceeding.",
+    "category": "Configure Crawl Options",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to \"/\""
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Login\""
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Sign in\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/home\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"invalid viewport format\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "Crawl run shows evidence of extra scroll screenshots setting",
+    "description": "Verifies that when scroll steps are configured, the UI shows additional captured screenshots/evidence corresponding to extra scroll captures.",
+    "category": "Configure Crawl Options",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to \"/\""
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Login\""
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Sign in\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/home\""
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Incidents\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/incidents\""
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "Configured concurrency is displayed in the run configuration details",
+    "description": "Verifies the selected concurrency value is visible in the run configuration details or settings summary after a build is initiated.",
+    "category": "Configure Crawl Options",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to \"/\""
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Login\""
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Sign in\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/home\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Concurrency\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC013",
+    "title": "Configured viewport is displayed and reflected in capture metadata",
+    "description": "Verifies the viewport setting is visible in capture configuration/metadata and matches the configured value format (e.g., 1280x720).",
+    "category": "Configure Crawl Options",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to \"/\""
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Login\""
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Sign in\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/home\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"1280x720\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC014",
+    "title": "Wait strategy networkidle is shown in crawl/run settings",
+    "description": "Verifies that selecting the page load wait strategy (networkidle) is reflected in the visible run configuration.",
+    "category": "Configure Crawl Options",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to \"/\""
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Login\""
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Sign in\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/home\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"networkidle\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC015",
+    "title": "Export both formats with selected classes shows COCO and YOLO outputs in the UI",
+    "description": "Verifies the user can select COCO+YOLO and a class subset and sees both export outputs listed as completed.",
+    "category": "Export Formats & Class Taxonomy",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/home\""
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Build Dataset\" or \"New Build\" call-to-action"
+      },
+      {
+        "type": "action",
+        "description": "Select \"Both (COCO + YOLO)\" from the export format dropdown"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"COCO\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC016",
+    "title": "Export both formats lists COCO JSON output path",
+    "description": "Verifies the build results include a COCO annotation artifact entry referencing coco.json.",
+    "category": "Export Formats & Class Taxonomy",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/home\""
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Build Dataset\" or \"New Build\" call-to-action"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Start Build\" or \"Run\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"output/annotations/coco.json\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC017",
+    "title": "Export both formats lists YOLO output folder or files",
+    "description": "Verifies the build results include a YOLO artifact entry referencing the yolo output location (folder or .txt outputs).",
+    "category": "Export Formats & Class Taxonomy",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/home\""
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Build Dataset\" or \"New Build\" call-to-action"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Start Build\" or \"Run\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"output/annotations/yolo\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC018",
+    "title": "Selecting a class taxonomy subset shows the chosen classes in the export configuration summary",
+    "description": "Verifies the UI reflects the chosen class list (button, link, input, checkbox, image_icon) before running export.",
+    "category": "Export Formats & Class Taxonomy",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/home\""
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Build Dataset\" or \"New Build\" call-to-action"
+      },
+      {
+        "type": "action",
+        "description": "Type \"button,link,input,checkbox,image_icon\" into the \"Classes\" or \"Included classes\" field"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"button,link,input,checkbox,image_icon\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC019",
+    "title": "Export both formats with class subset completes successfully",
+    "description": "Verifies a build configured for both exports and a specific class subset reaches a visible completed/success state.",
+    "category": "Export Formats & Class Taxonomy",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/home\""
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Build Dataset\" or \"New Build\" call-to-action"
+      },
+      {
+        "type": "action",
+        "description": "Select \"Both (COCO + YOLO)\" from the export format dropdown"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Start Build\" or \"Run\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Completed\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC020",
+    "title": "Unsupported export format shows a clear validation error and does not start export",
+    "description": "Verifies entering an unknown export format triggers an 'unsupported export format' error message and prevents running.",
+    "category": "Export Formats & Class Taxonomy",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/home\""
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Build Dataset\" or \"New Build\" call-to-action"
+      },
+      {
+        "type": "action",
+        "description": "Type \"unknownformat\" into the \"Export format\" field"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"unsupported export format\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC021",
+    "title": "Unsupported export format attempt exits the run flow (no outputs shown)",
+    "description": "Verifies that after an unsupported export format error, no COCO/YOLO output artifacts are displayed.",
+    "category": "Export Formats & Class Taxonomy",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/home\""
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Build Dataset\" or \"New Build\" call-to-action"
+      },
+      {
+        "type": "action",
+        "description": "Type \"unknownformat\" into the \"Export format\" field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Start Build\" or \"Run\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"output/annotations/coco.json\" is not visible"
+      }
+    ]
+  },
+  {
+    "id": "TC022",
+    "title": "Classes field rejects invalid/empty taxonomy input",
+    "description": "Verifies the UI validates the classes input and shows an error when the field is empty or invalid.",
+    "category": "Export Formats & Class Taxonomy",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Log in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/home\""
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Build Dataset\" or \"New Build\" call-to-action"
+      },
+      {
+        "type": "action",
+        "description": "Type \"\" into the \"Classes\" or \"Included classes\" field"
+      },
+      {
+        "type": "action",
+        "description": "Click the \"Start Build\" or \"Run\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"classes\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC023",
+    "title": "Signup page loads and role selection is visible",
+    "description": "Verifies the signup page can be opened and the role selection control is present.",
+    "category": "Failure Logging & Debugging",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /signup"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Sign up\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Email\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Password\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Confirm password\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Role\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC024",
+    "title": "Landing page surfaces legal/robots guidance in product messaging",
+    "description": "Verifies the landing page contains visible guidance or warning text about crawling permissions and robots.txt behavior.",
+    "category": "Legal / Robots Respect",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"robots.txt\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"permission\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"crawl\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC025",
+    "title": "Warning about default not respecting robots.txt is visible to users",
+    "description": "Verifies users can find a warning that robots respect is disabled by default and they must ensure permission to crawl.",
+    "category": "Legal / Robots Respect",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"respect-robots\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"false by default\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"ensure you have permission\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC026",
+    "title": "Robots respect option is documented as an explicit opt-in",
+    "description": "Verifies the UI copy communicates that respecting robots.txt is an explicit option/flag rather than the default.",
+    "category": "Legal / Robots Respect",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"--respect-robots\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"option\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC027",
+    "title": "Legal guidance is accessible without authentication",
+    "description": "Verifies legal/robots guidance is visible on a public route without requiring login.",
+    "category": "Legal / Robots Respect",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Login\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"robots.txt\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"ensure\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC028",
+    "title": "Login page does not block access to legal/robots guidance discovery",
+    "description": "Verifies a user can reach the login page and still locate references to safe crawling expectations via visible text or links back to the landing page.",
+    "category": "Legal / Robots Respect",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify page title contains \"Login\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Email\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Password\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC029",
+    "title": "Signup page is accessible and does not imply robots respect is automatic",
+    "description": "Verifies signup is reachable and does not present any misleading claim that robots.txt will always be respected by default.",
+    "category": "Legal / Robots Respect",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /signup"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify page title contains \"Signup\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Email\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Password\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC030",
+    "title": "Legal/robots guidance remains visible after scrolling through landing content",
+    "description": "Verifies the user can scroll and still find robots/legal guidance in visible sections (e.g., how-it-works or FAQ).",
+    "category": "Legal / Robots Respect",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Scroll to \"How it works\" section"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"robots.txt\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"permission\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC031",
+    "title": "Login and reach authenticated Home dashboard",
+    "description": "Verifies a user can log in with valid credentials and land on the authenticated Home page.",
+    "category": "Dataset Manifest & Per-Image Metadata",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Login\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/home\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Service health\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC032",
+    "title": "Navigate to Incidents list from Home",
+    "description": "Verifies an authenticated user can open the Incidents list page from the Home dashboard.",
+    "category": "Dataset Manifest & Per-Image Metadata",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Incidents\" in the main navigation"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/incidents\""
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Incidents\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC033",
+    "title": "Incidents list shows severity badges and timestamps",
+    "description": "Verifies the Incidents list UI renders key incident summary information for quick scanning.",
+    "category": "Dataset Manifest & Per-Image Metadata",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_USER}}\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"{{LOGIN_PASSWORD}}\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Sign in\" button"
+      },
+      {
+        "type": "action",
+        "description": "Click on \"Incidents\" in the main navigation"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Severity\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Timestamp\" is visible"
+      }
+    ]
+  },
+  {
+    "id": "TC034",
+    "title": "Invalid password shows an error message",
+    "description": "Verifies the login page rejects invalid credentials and displays a visible error state.",
+    "category": "Dataset Manifest & Per-Image Metadata",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /login"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Login\" is visible"
+      },
+      {
+        "type": "action",
+        "description": "Type \"fake.user@example.com\" into the email field"
+      },
+      {
+        "type": "action",
+        "description": "Type \"wrong-password\" into the password field"
+      },
+      {
+        "type": "action",
+        "description": "Click on the \"Sign in\" button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Invalid\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify URL contains \"/login\""
+      }
+    ]
+  },
+  {
+    "id": "TC035",
+    "title": "Signup page renders required fields including role selection",
+    "description": "Verifies the signup form is accessible and shows all expected inputs for account creation.",
+    "category": "Dataset Manifest & Per-Image Metadata",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /signup"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify text \"Sign up\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Email\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Password\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Confirm password\" is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify element \"Role\" is visible"
+      }
+    ]
+  }
+]
